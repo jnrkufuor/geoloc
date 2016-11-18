@@ -15,20 +15,20 @@
 			});
 		}
 
-		/*document.getElementById("geolocationdata").addEventListener("click", function() {
+		document.getElementById("geolocationdata").addEventListener("click", function() {
 			navigator.geolocation.getCurrentPosition(onSuccess, onError, {
 				enableHighAccuracy : true
 			});
-		});*/
+		});
 
 		//watchPosition
-		/*	var watchId = navigator.geolocation.watchPosition(onWatchSuccess, onWatchError, {
+		var watchId = navigator.geolocation.watchPosition(onWatchSuccess, onWatchError, {
 			timeout : 30000
 		});
 
 		document.getElementById("clearWatchbtn").addEventListener("click", function() {
 			navigator.geolocation.clearWatch(watchID);
-		});*/
+		});
 
 	};
 
@@ -49,28 +49,25 @@
 	}
 
 	///////////geolocation bit/////////////////
-	/*var onSuccess = function(position) {
+	var onSuccess = function(position) {
 		alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: ' + position.coords.longitude + '\n');
 	};
-
 	// onError Callback receives a PositionError object
 	//
 	function onError(error) {
 		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-	}*/
-
+	}
 	//watchPosition
-
-	/*var onWatchSuccess = function(position) {
+	var onWatchSuccess = function(position) {
 		var element = document.getElementById('divWatchMeMove');
 		element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' + 'Longitude: ' + position.coords.longitude + '<br />' + '<hr />' + element.innerHTML;
 	};
-
 	function onWatchError(error) {
 		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-	}*/
+	}
 
 })();
+
 jQuery(document).ready(function ($) {
 	$('#geo').click(function (event) {
 		var options = {
