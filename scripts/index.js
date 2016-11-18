@@ -82,11 +82,28 @@ jQuery(document).ready(function ($) {
 	});
 });
 
+function initMap(lat,long) {
+    var myCentre = new google.maps.LatLng(lat,long);
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myCentre,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+    });
+
+    var marker = new google.maps.Marker({
+        position: myCentre,
+        map: map,
+    });
+    marker.setMap(map);
+}
+
+
 function onSuccess(position) {
 
 	var lat= position.coords.latitude ;   
 	var long= position.coords.longitude ;
-	alert("Latitude:"+lat+"\nLongitude:"+long);
+	initMap(lat,long);
+	//alert("Latitude:"+lat+"\nLongitude:"+long);
 };
 function onError(error) {
 	alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');

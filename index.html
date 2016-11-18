@@ -38,13 +38,26 @@
 			<img src="img/QgiZyhf.jpg" width="100%" height="180" />
 			<div data-role="content" style="text-shadow: none; text-align:center;">
 			   
-				<a id="geo" style="display:block; background-color:midnightblue; color:ghostwhite; margin:10px; padding:8px; border-radius: 8px;">Geolocation</a>
+				<a id="geo" href="#mapPage" style="display:block; background-color:midnightblue; color:ghostwhite; margin:10px; padding:8px; border-radius: 8px;">Geolocation</a>
 				<a id="capturePhoto" style="display:block; background-color:midnightblue; color:ghostwhite; margin:10px; padding:8px;  border-radius: 8px;">Camera</a>	
 				<a id="barcode" style="display:block; background-color:midnightblue; color:ghostwhite; margin:10px; padding:8px;  border-radius: 8px;">Barcode</a>	
 				<div><center><img class="lazy" style="display:none;width:100%;height:100%;" id="smallImage" src="" /></center></div>
 				<br />
 			</div><!-- /content -->
 		</div><!-- /page -->
+		<div data-role="page" id="mapPage" style="background: white; background-color:ghostwhite;">
+
+			<div data-role="header" style="text-shadow: none; color:ghostwhite ">
+				<h1>Map</h1>
+				<a href="index.html" data-role="button" data-icon="refresh" data-iconpos="notext" style="background: white;border: none;">Refresh</a>
+			</div><!-- /header -->
+
+			<div data-role="content" style="text-shadow: none; text-align:center;">
+			   
+				<div id="map" style="width:100%; height: 200px;"> </div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
 
 		<!----------------------------->
 
