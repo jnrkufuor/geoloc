@@ -1,40 +1,40 @@
-//(function() {
+(function() {
 
-//	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
-var pictureSource;
-var destinationType;
-//	function onDeviceReady() {
-pictureSource = navigator.camera.PictureSourceType;
-destinationType = navigator.camera.DestinationType;
+	document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+	var pictureSource;
+	var destinationType;
+	function onDeviceReady() {
+		pictureSource = navigator.camera.PictureSourceType;
+		destinationType = navigator.camera.DestinationType;
 
-//		document.getElementById("capturePhoto").onclick = function() {
-//			console.log("click");
-//			navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
-//				quality : 50,
-//
-//				destinationType : destinationType.DATA_URL
-//			});
-//		}
-//
-//	};
+		document.getElementById("capturePhoto").onclick = function() {
+			console.log("click");
+			navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+				quality : 50,
+
+				destinationType : destinationType.DATA_URL
+			});
+		}
+
+	};
 
 
-function onPhotoDataSuccess(imageData) {
+	function onPhotoDataSuccess(imageData) {
 
-	var smallImage = document.getElementById('smallImage');
+		var smallImage = document.getElementById('smallImage');
 
-	smallImage.style.display = 'block';
+		smallImage.style.display = 'block';
 
-	smallImage.src = "data:image/jpeg;base64," + imageData;
+		smallImage.src = "data:image/jpeg;base64," + imageData;
 
-}
+	}
 
-function onFail(message) {
+	function onFail(message) {
 
-	alert('Failed because: ' + message);
+		alert('Failed because: ' + message);
 
-}
-//})();
+	}
+})();
 
 jQuery(document).ready(function ($) {
 	$('#capturePhoto').click(function (event) {
@@ -47,7 +47,6 @@ jQuery(document).ready(function ($) {
 
 	});
 });
-
 
 
 jQuery(document).ready(function ($) {
