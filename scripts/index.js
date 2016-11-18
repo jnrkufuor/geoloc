@@ -83,18 +83,18 @@ jQuery(document).ready(function ($) {
 });
 
 function initMap(lat,long) {
-    var myCentre = new google.maps.LatLng(lat,long);
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
-        center: myCentre,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-    });
+	var myCentre = new google.maps.LatLng(lat,long);
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 12,
+		center: myCentre,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+	});
 
-    var marker = new google.maps.Marker({
-        position: myCentre,
-        map: map,
-    });
-    marker.setMap(map);
+	var marker = new google.maps.Marker({
+		position: myCentre,
+		map: map,
+	});
+	marker.setMap(map);
 }
 
 
@@ -108,3 +108,16 @@ function onSuccess(position) {
 function onError(error) {
 	alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
 }
+function scan(){
+	console.log("clicked");
+	cordova.plugins.barcodeScanner.scan(function(result){
+		//success callback
+		alert(JSON.stringify(result));
+
+	},function(error){
+		//error callback
+		alert(JSON.stringify(error));
+
+	});
+}
+
